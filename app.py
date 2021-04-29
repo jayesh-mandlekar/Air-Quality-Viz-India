@@ -44,23 +44,6 @@ air_quality_df['Area Category'] = air_quality_df['Area Category'].replace(
         'Industrial Areas', 'Sensitive Areas'],
     ['Residential and Rural Areas', 'Residential Areas', 'Industrial Area', 'Sensitive Area'])
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-############################################################### Graph 1
-############################################################### Graph 1
-
 app.layout = html.Div(children=[
     html.H1(children='Indian Air Quality User Dashboard', style={'textAlign':'center'}),
     html.Label('States'),
