@@ -175,7 +175,7 @@ def update_figure(start_date, end_date):
 
     fig_2 = go.Figure(go.Bar(
         x=x_values,
-        y=y_values, 
+        y=y_values,
         text=y_values
     ))
 
