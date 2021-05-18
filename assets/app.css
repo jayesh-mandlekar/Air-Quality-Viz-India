@@ -1,0 +1,32 @@
+.graph-callback-flex {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.callback-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.graph-flex {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.graph-child-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.padding-utility{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.padding-utility label {
+    padding: 8px 0px;
+}
+
