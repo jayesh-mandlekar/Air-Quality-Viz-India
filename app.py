@@ -1,6 +1,7 @@
 from datetime import date, datetime
 import dash
 import dash_core_components as dcc
+from dash_core_components.Dropdown import Dropdown
 import dash_html_components as html
 from matplotlib.pyplot import text
 import plotly.graph_objects as go
@@ -47,7 +48,7 @@ air_quality_df['Area Category'] = air_quality_df['Area Category'].replace(
         'Industrial Areas', 'Sensitive Areas'],
     ['Residential and Rural Areas', 'Residential Areas', 'Industrial Area', 'Sensitive Area'])
 
-#-----Important Variables
+# -----Important Variables
 
 Constant_Pollutants = ['Sulphur_Dioxide', 'Nitrogen_Dioxide',
                        'Respirable_Suspended_Particulate_Matter']
@@ -58,7 +59,7 @@ end_date_year = '0'
 end_date_month = '0'
 end_date_day = '0'
 
-#------------------
+# ------------------
 # -------------------------------------------------------------------------------------------------------
 
 air_quality_df['Date'] = pd.to_datetime(air_quality_df['Date'])
@@ -82,8 +83,75 @@ app.layout = html.Div(children=[
                         end_date_placeholder_text="End Period",
                         calendar_orientation="vertical"
                         ),
-    dcc.Graph(id='top-10-bar-graph')
+    dcc.Graph(id='top-10-bar-graph'),
+    dcc.Dropdown(id='pollutant-dropdown', options=[
+        {'label': i, 'value': i} for i in Constant_Pollutants
+    ], value=Constant_Pollutants[0]),
+    dcc.Graph(id='pollutant-trend-graph')
 ])
+
+
+@app.callback(
+    Output('pollutant-trend-graph', 'figure'),
+    [Input('pollutant-dropdown', 'value'),
+     Input('Time-Slots', 'start_date'),
+     Input('Time-Slots', 'end_date')]
+)
+def update_figure(selected_pollutant, start_date, end_date):
+    string_prefix = "You have selected: "
+    if start_date is not None:
+        start_date_object = date.fromisoformat(start_date)
+        start_date_string = start_date_object.strftime('%Y-%m-%d')
+        string_prefix = start_date_string
+        start_date_list = string_prefix.split("-")
+        start_date_year = start_date_list[0]
+        start_date_month = start_date_list[1]
+        start_date_day = start_date_list[2]
+
+    if end_date is not None:
+        end_date_object = date.fromisoformat(end_date)
+        end_date_string = end_date_object.strftime('%Y-%m-%d')
+        string_prefix = end_date_string
+        end_date_list = string_prefix.split("-")
+        end_date_year = end_date_list[0]
+        end_date_month = end_date_list[1]
+        end_date_day = end_date_list[2]
+
+    Time_Series_df = air_quality_df.loc[
+        (air_quality_df['Date'] > datetime(int(start_date_year), int(start_date_month), int(start_date_day), 0, 0, 0)) &
+        (air_quality_df['Date'] < datetime(int(end_date_year), int(end_date_month), int(end_date_day), 0, 0, 0))]
+
+    Required_Pollutant = selected_pollutant
+    y_values = Time_Series_df.loc[:, Required_Pollutant].values.tolist()
+    x_values = Time_Series_df.Date
+
+    fig_3 = go.Figure(go.Histogram(
+        x=y_values,
+        # nbins=30,
+    ))
+
+    fig_3.update_layout(
+        title={
+            'text': "Histogram - Distribution of {} from {} to {}".format(Required_Pollutant, start_date_string, end_date_string),
+            'y': 0.92,
+            'x': 0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})
+
+    fig_3.update_xaxes(
+        title_text="Distribution",
+        title_font={"size": 20},
+        # showgrid=False,
+    )
+
+    fig_3.update_yaxes(
+        title_text="Count",
+        # showgrid=False,
+        # zeroline=False,
+        # visible=False
+    )
+
+    return fig_3
 
 @app.callback(
     Output('dotline-1-graph', 'figure'),
@@ -175,13 +243,13 @@ def update_figure(start_date, end_date):
 
     fig_2 = go.Figure(go.Bar(
         x=x_values,
-        y=y_values, 
+        y=y_values,
         text=y_values
     ))
 
     fig_2.update_layout(
         title={
-            'text': 'Bar Plot - Top 10 Polluted States from {} to {}'.format(start_date_string,end_date_string),
+            'text': 'Bar Plot - Top 10 Polluted States from {} to {}'.format(start_date_string, end_date_string),
             'y': 0.92,
             'x': 0.5,
             'xanchor': 'center',
@@ -200,6 +268,7 @@ def update_figure(start_date, end_date):
     )
 
     return fig_2
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)
