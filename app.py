@@ -89,8 +89,55 @@ app.layout = html.Div(children=[
     ], value=Constant_Pollutants[0]),
     dcc.Graph(id='pollutant-trend-histogram'),
     dcc.Graph(id='pollutant-trend-boxplot'),
+    dcc.Graph(id='state-wise-area-category-bar-graph')
 
 ])
+
+
+@app.callback(
+    Output('state-wise-area-category-bar-graph', 'figure'),
+    Input('state-dropdown', 'value')
+)
+def update_figure(selected_state):
+    state = selected_state
+    features = ['Area Category', 'Sulphur_Dioxide',
+                'Nitrogen_Dioxide', 'Respirable_Suspended_Particulate_Matter']
+    required_df = air_quality_df.loc[air_quality_df['State']
+                                     == state, features].groupby('Area Category').mean()
+    x_columns = required_df.index.tolist()
+
+    fig_4 = go.Figure(data=[
+        go.Bar(name=Constant_Pollutants[0], x=x_columns,
+               y=required_df[Constant_Pollutants[0]]),
+        go.Bar(name=Constant_Pollutants[1], x=x_columns,
+               y=required_df[Constant_Pollutants[1]]),
+        go.Bar(name=Constant_Pollutants[2], x=x_columns,
+               y=required_df[Constant_Pollutants[2]]),
+
+    ])
+
+    fig_4.update_layout(barmode='group',
+                        title={
+                            'text': "Stacked Bar Plot - Showing the Area Category Wise Pollution in {}".format(state),
+                            'y': 0.92,
+                            'x': 0.5,
+                            'xanchor': 'center',
+                            'yanchor': 'top'})
+
+    fig_4.update_xaxes(
+        title_text="Area Category",
+        title_font={"size": 20},
+        # showgrid=False,
+    )
+
+    fig_4.update_yaxes(
+        title_text="Average Quantity",
+        # showgrid=False,
+        # zeroline=False,
+        # visible=False
+    )
+
+    return fig_4
 
 
 @app.callback(
@@ -146,7 +193,6 @@ def update_figure(selected_pollutant, start_date, end_date):
     )
 
     return fig_4
-
 
 
 @app.callback(
@@ -210,6 +256,7 @@ def update_figure(selected_pollutant, start_date, end_date):
     )
 
     return fig_3
+
 
 @app.callback(
     Output('dotline-1-graph', 'figure'),
