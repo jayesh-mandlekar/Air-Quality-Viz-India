@@ -87,12 +87,70 @@ app.layout = html.Div(children=[
     dcc.Dropdown(id='pollutant-dropdown', options=[
         {'label': i, 'value': i} for i in Constant_Pollutants
     ], value=Constant_Pollutants[0]),
-    dcc.Graph(id='pollutant-trend-graph')
+    dcc.Graph(id='pollutant-trend-histogram'),
+    dcc.Graph(id='pollutant-trend-boxplot'),
+
 ])
 
 
 @app.callback(
-    Output('pollutant-trend-graph', 'figure'),
+    Output('pollutant-trend-boxplot', 'figure'),
+    [Input('pollutant-dropdown', 'value'),
+     Input('Time-Slots', 'start_date'),
+     Input('Time-Slots', 'end_date')]
+)
+def update_figure(selected_pollutant, start_date, end_date):
+    string_prefix = "You have selected: "
+    if start_date is not None:
+        start_date_object = date.fromisoformat(start_date)
+        start_date_string = start_date_object.strftime('%Y-%m-%d')
+        string_prefix = start_date_string
+        start_date_list = string_prefix.split("-")
+        start_date_year = start_date_list[0]
+        start_date_month = start_date_list[1]
+        start_date_day = start_date_list[2]
+
+    if end_date is not None:
+        end_date_object = date.fromisoformat(end_date)
+        end_date_string = end_date_object.strftime('%Y-%m-%d')
+        string_prefix = end_date_string
+        end_date_list = string_prefix.split("-")
+        end_date_year = end_date_list[0]
+        end_date_month = end_date_list[1]
+        end_date_day = end_date_list[2]
+
+    Time_Series_df = air_quality_df.loc[
+        (air_quality_df['Date'] > datetime(int(start_date_year), int(start_date_month), int(start_date_day), 0, 0, 0)) &
+        (air_quality_df['Date'] < datetime(int(end_date_year), int(end_date_month), int(end_date_day), 0, 0, 0))]
+
+    Required_Pollutant = selected_pollutant
+    y_values = Time_Series_df.loc[:, Required_Pollutant].values.tolist()
+    x_values = Time_Series_df.Date
+
+    fig_4 = go.Figure(go.Box(
+        x=y_values,
+    ))
+
+    fig_4.update_layout(
+        title={
+            'text': "Boxplot - Distribution of {} from {} to {}".format(Required_Pollutant, start_date_string, end_date_string),
+            'y': 0.92,
+            'x': 0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})
+
+    fig_4.update_xaxes(
+        title_text="Count",
+        title_font={"size": 20},
+        # showgrid=False,
+    )
+
+    return fig_4
+
+
+
+@app.callback(
+    Output('pollutant-trend-histogram', 'figure'),
     [Input('pollutant-dropdown', 'value'),
      Input('Time-Slots', 'start_date'),
      Input('Time-Slots', 'end_date')]
