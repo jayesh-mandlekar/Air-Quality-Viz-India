@@ -84,9 +84,10 @@ app.layout = html.Div(children=[
                               html.Div(className='padding-utility', children=[
                                   html.Label('Calendar'),
                                   dcc.DatePickerRange(id='Time-Slots',
-                                                      start_date_placeholder_text="Start Period",
-                                                      end_date_placeholder_text="End Period",
-                                                      calendar_orientation="vertical"
+                                                      start_date_placeholder_text="01/01/2001",
+                                                      end_date_placeholder_text="12/31/2016",
+                                                      calendar_orientation="vertical",
+                                                    
                                                       ),
                               ]),
                               html.Div(className='padding-utility', children=[
@@ -108,12 +109,10 @@ app.layout = html.Div(children=[
                                   dcc.Graph(id='pollutant-trend-histogram'),
                                   dcc.Graph(id='pollutant-trend-boxplot'),
                               ]),
-                              html.Div(className='graph-child-flex', children=[
+                              html.Div(children=[
                                   dcc.Graph(
                                       id='state-wise-area-category-bar-graph')
                               ]),
-
-
 
                           ]),
              ]),
@@ -143,6 +142,12 @@ def update_figure(selected_state):
     ])
 
     fig_5.update_layout(barmode='group',
+                        legend=dict(
+                            yanchor="top",
+                            y=0.99,
+                            xanchor="left",
+                            x=0.01
+                        ),
                         # title={
                         #     'text': "Stacked Bar Plot - Showing the Area Category Wise Pollution in {}".format(state),
                         #     'y': 0.92,
