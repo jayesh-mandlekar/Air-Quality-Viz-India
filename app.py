@@ -3,15 +3,15 @@ import dash
 import dash_core_components as dcc
 from dash_core_components.Dropdown import Dropdown
 import dash_html_components as html
-from matplotlib.pyplot import text
+from dash_html_components.Div import Div
+from matplotlib.pyplot import cla, text, title
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output
 import plotly.express as px
 import pandas as pd
 
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app = dash.Dash(__name__)
 
 # Dataset Manipulation and Analysis
 air_quality_df = pd.read_csv('./data/data.csv')
@@ -70,27 +70,53 @@ air_quality_df['Date'] = pd.to_datetime(air_quality_df['Date'])
 app.layout = html.Div(children=[
     html.H1(children='Indian Air Quality User Dashboard',
             style={'textAlign': 'center'}),
-    html.Label('States'),
-    dcc.Dropdown(
-        id='state-dropdown',
-        options=[
-            {'label': i, 'value': i} for i in air_quality_df['State'].unique()
-        ], value="Andhra Pradesh"
-    ),
-    dcc.Graph(id='dotline-1-graph'),
-    dcc.DatePickerRange(id='Time-Slots',
-                        start_date_placeholder_text="Start Period",
-                        end_date_placeholder_text="End Period",
-                        calendar_orientation="vertical"
-                        ),
-    dcc.Graph(id='top-10-bar-graph'),
-    dcc.Dropdown(id='pollutant-dropdown', options=[
-        {'label': i, 'value': i} for i in Constant_Pollutants
-    ], value=Constant_Pollutants[0]),
-    dcc.Graph(id='pollutant-trend-histogram'),
-    dcc.Graph(id='pollutant-trend-boxplot'),
-    dcc.Graph(id='state-wise-area-category-bar-graph')
+    html.Div(className='graph-callback-flex',
+             children=[
+                 html.Div(className='callback-flex',
+                          children=[
+                              html.Div(className='padding-utility',children=[html.Label('States'),
+                                                 dcc.Dropdown(
+                                  id='state-dropdown',
+                                  options=[
+                                      {'label': i, 'value': i} for i in air_quality_df['State'].unique()
+                                  ], value="Andhra Pradesh"
+                              )]),
+                              html.Div(className='padding-utility', children=[
+                                  html.Label('Calendar'),
+                                  dcc.DatePickerRange(id='Time-Slots',
+                                                      start_date_placeholder_text="Start Period",
+                                                      end_date_placeholder_text="End Period",
+                                                      calendar_orientation="vertical"
+                                                      ),
+                              ]),
+                              html.Div(className='padding-utility', children=[
+                                  html.Label(
+                                      'Pollutants', className='individual-padding'),
+                                  dcc.Dropdown(id='pollutant-dropdown', options=[
+                                      {'label': i, 'value': i} for i in Constant_Pollutants
+                                  ], value=Constant_Pollutants[0]),
+                              ]),
+                          ]),
 
+                 html.Div(className='graph-flex',
+                          children=[
+                              html.Div(className='graph-child-flex', children=[
+                                  dcc.Graph(id='dotline-1-graph'),
+                                  dcc.Graph(id='top-10-bar-graph'),
+                              ]),
+                              html.Div(className='graph-child-flex', children=[
+                                  dcc.Graph(id='pollutant-trend-histogram'),
+                                  dcc.Graph(id='pollutant-trend-boxplot'),
+                              ]),
+                              html.Div(className='graph-child-flex', children=[
+                                  dcc.Graph(
+                                      id='state-wise-area-category-bar-graph')
+                              ]),
+
+
+
+                          ]),
+             ]),
 ])
 
 
@@ -117,13 +143,13 @@ def update_figure(selected_state):
     ])
 
     fig_5.update_layout(barmode='group',
-                        title={
-                            'text': "Stacked Bar Plot - Showing the Area Category Wise Pollution in {}".format(state),
-                            'y': 0.92,
-                            'x': 0.5,
-                            'xanchor': 'center',
-                            'yanchor': 'top'})
-
+                        # title={
+                        #     'text': "Stacked Bar Plot - Showing the Area Category Wise Pollution in {}".format(state),
+                        #     'y': 0.92,
+                        #     'x': 0.5,
+                        #     'xanchor': 'center',
+                        #     'yanchor': 'top'}))
+                        )
     fig_5.update_xaxes(
         title_text="Area Category",
         title_font={"size": 20},
@@ -138,6 +164,7 @@ def update_figure(selected_state):
     )
 
     return fig_5
+
 
 @app.callback(
     Output('pollutant-trend-boxplot', 'figure'),
@@ -177,13 +204,14 @@ def update_figure(selected_pollutant, start_date, end_date):
         x=y_values,
     ))
 
-    fig_4.update_layout(
-        title={
-            'text': "Boxplot - Distribution of {} from {} to {}".format(Required_Pollutant, start_date_string, end_date_string),
-            'y': 0.92,
-            'x': 0.5,
-            'xanchor': 'center',
-            'yanchor': 'top'})
+    # fig_4.update_layout(
+    #     title={
+    #         'text': "Boxplot - Distribution of {} from {} to {}".format(Required_Pollutant, start_date_string, end_date_string),
+    #         'y': 0.92,
+    #         'x': 0.5,
+    #         'xanchor': 'center',
+    #         'yanchor': 'top'},
+    #         )
 
     fig_4.update_xaxes(
         title_text="Count",
@@ -233,13 +261,13 @@ def update_figure(selected_pollutant, start_date, end_date):
         # nbins=30,
     ))
 
-    fig_3.update_layout(
-        title={
-            'text': "Histogram - Distribution of {} from {} to {}".format(Required_Pollutant, start_date_string, end_date_string),
-            'y': 0.92,
-            'x': 0.5,
-            'xanchor': 'center',
-            'yanchor': 'top'})
+    # fig_3.update_layout(
+    #     title={
+    #         'text': "Histogram - Distribution of {} from {} to {}".format(Required_Pollutant, start_date_string, end_date_string),
+    #         'y': 0.92,
+    #         'x': 0.5,
+    #         'xanchor': 'center',
+    #         'yanchor': 'top'})
 
     fig_3.update_xaxes(
         title_text="Distribution",
@@ -274,35 +302,36 @@ def update_figure(selected_state):
         mode='lines+markers+text',
         marker=dict(
             color='Red',
-            size=40,
+            size=20,
             line=dict(
                 color='MediumPurple',
-                width=4
+                width=1
             )
         ),
         text=Pollutants_Numbers,
         textposition="top center"
     ))
 
-    fig_1.update_layout(
-        title={
-            'text': "Scatter and Line Plot - Amount of {}, {}, {} in {}".format(Constant_Pollutants[0], Constant_Pollutants[1], Constant_Pollutants[2], selected_state),
-            'y': 0.92,
-            'x': 0.5,
-            'xanchor': 'center',
-            'yanchor': 'top'})
+    # fig_1.update_layout(
+    #     title={
+    #         'text': "Scatter and Line Plot - Amount of {}, {}, {} in {}".format(Constant_Pollutants[0], Constant_Pollutants[1], Constant_Pollutants[2], selected_state),
+    #         'y': 0.92,
+    #         'x': 0.5,
+    #         'xanchor': 'center',
+    #         'yanchor': 'top'})
 
     fig_1.update_xaxes(
         title_text="Pollutant",
         title_font={"size": 20},
-        showgrid=False,
+        # showgrid=False,
     )
 
     fig_1.update_yaxes(
         title_text="Average",
-        showgrid=False,
-        zeroline=False,
-        visible=False
+        rangemode='tozero'
+        # showgrid=False,
+        # zeroline=False,
+        # visible=False
     )
 
     return fig_1
@@ -351,13 +380,13 @@ def update_figure(start_date, end_date):
         text=y_values
     ))
 
-    fig_2.update_layout(
-        title={
-            'text': 'Bar Plot - Top 10 Polluted States from {} to {}'.format(start_date_string, end_date_string),
-            'y': 0.92,
-            'x': 0.5,
-            'xanchor': 'center',
-            'yanchor': 'top'})
+    # fig_2.update_layout(
+    #     title={
+    #         'text': 'Bar Plot - Top 10 Polluted States from {} to {}'.format(start_date_string, end_date_string),
+    #         'y': 0.92,
+    #         'x': 0.5,
+    #         'xanchor': 'center',
+    #         'yanchor': 'top'})
 
     fig_2.update_xaxes(
         title_text="States",
@@ -372,6 +401,7 @@ def update_figure(start_date, end_date):
     )
 
     return fig_2
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)
