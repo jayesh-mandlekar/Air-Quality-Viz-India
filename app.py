@@ -106,7 +106,7 @@ def update_figure(selected_state):
                                      == state, features].groupby('Area Category').mean()
     x_columns = required_df.index.tolist()
 
-    fig_4 = go.Figure(data=[
+    fig_5 = go.Figure(data=[
         go.Bar(name=Constant_Pollutants[0], x=x_columns,
                y=required_df[Constant_Pollutants[0]]),
         go.Bar(name=Constant_Pollutants[1], x=x_columns,
@@ -116,7 +116,7 @@ def update_figure(selected_state):
 
     ])
 
-    fig_4.update_layout(barmode='group',
+    fig_5.update_layout(barmode='group',
                         title={
                             'text': "Stacked Bar Plot - Showing the Area Category Wise Pollution in {}".format(state),
                             'y': 0.92,
@@ -124,21 +124,20 @@ def update_figure(selected_state):
                             'xanchor': 'center',
                             'yanchor': 'top'})
 
-    fig_4.update_xaxes(
+    fig_5.update_xaxes(
         title_text="Area Category",
         title_font={"size": 20},
         # showgrid=False,
     )
 
-    fig_4.update_yaxes(
+    fig_5.update_yaxes(
         title_text="Average Quantity",
         # showgrid=False,
         # zeroline=False,
         # visible=False
     )
 
-    return fig_4
-
+    return fig_5
 
 @app.callback(
     Output('pollutant-trend-boxplot', 'figure'),
@@ -373,7 +372,6 @@ def update_figure(start_date, end_date):
     )
 
     return fig_2
-
 
 if __name__ == '__main__':
     app.run_server(debug=True)
