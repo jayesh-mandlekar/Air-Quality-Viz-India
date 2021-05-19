@@ -4,7 +4,7 @@ import dash_core_components as dcc
 from dash_core_components.Dropdown import Dropdown
 import dash_html_components as html
 from dash_html_components.Div import Div
-from matplotlib.pyplot import cla, text, title
+from matplotlib.pyplot import cla, fill, text, title
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output
 import plotly.express as px
@@ -292,31 +292,46 @@ def update_figure(selected_pollutant, start_date, end_date):
 
 @app.callback(
     Output('dotline-1-graph', 'figure'),
-    Input('state-dropdown', 'value')
+    [   Input('state-dropdown', 'value'), 
+        Input('Time-Slots', 'start_date'),
+        Input('Time-Slots', 'end_date'),
+        Input('pollutant-dropdown', 'value')
+    ]
 )
-def update_figure(selected_state):
-    Bar_Plot_Pivot = air_quality_df.loc[(air_quality_df['State'] == selected_state),
-                                        ['State', 'Sulphur_Dioxide', 'Nitrogen_Dioxide', 'Respirable_Suspended_Particulate_Matter']].groupby(by='State').mean()
+def update_figure(selected_state, start_date, end_date, selected_Pollutant):
 
-    Pollutants_Numbers = Bar_Plot_Pivot.loc[selected_state].tolist()
-    Pollutants_Numbers = ['%.2f' % i for i in Pollutants_Numbers]
+    string_prefix = "You have selected: "
+    if start_date is not None:
+        start_date_object = date.fromisoformat(start_date)
+        start_date_string = start_date_object.strftime('%Y-%m-%d')
+        string_prefix = start_date_string
+        start_date_list = string_prefix.split("-")
+        start_date_year = start_date_list[0]
+        start_date_month = start_date_list[1]
+        start_date_day = start_date_list[2]
 
-    fig_1 = go.Figure(go.Scatter(
-        x=Constant_Pollutants,
-        y=Pollutants_Numbers,
-        mode='lines+markers+text',
-        marker=dict(
-            color='Red',
-            size=20,
-            line=dict(
-                color='MediumPurple',
-                width=1
-            )
-        ),
-        text=Pollutants_Numbers,
-        textposition="top center"
-    ))
+    if end_date is not None:
+        end_date_object = date.fromisoformat(end_date)
+        end_date_string = end_date_object.strftime('%Y-%m-%d')
+        string_prefix = end_date_string
+        end_date_list = string_prefix.split("-")
+        end_date_year = end_date_list[0]
+        end_date_month = end_date_list[1]
+        end_date_day = end_date_list[2]
 
+    Time_Series_df = air_quality_df.loc[
+        (air_quality_df['Date'] > datetime(int(start_date_year), int(start_date_month), int(start_date_day), 0, 0, 0)) &
+        (air_quality_df['Date'] < datetime(int(end_date_year), int(end_date_month), int(end_date_day), 0, 0, 0))]
+    
+    Time_Series_df = Time_Series_df.loc[(Time_Series_df['State'] == selected_state), :]
+
+    fig_1 = go.Figure()
+
+    fig_1.add_trace(go.Scatter(x=Time_Series_df['Date'], y=Time_Series_df[selected_Pollutant],
+                             mode='markers',
+                             name=selected_Pollutant,
+                            ))
+    
     # fig_1.update_layout(
     #     title={
     #         'text': "Scatter and Line Plot - Amount of {}, {}, {} in {}".format(Constant_Pollutants[0], Constant_Pollutants[1], Constant_Pollutants[2], selected_state),
@@ -324,16 +339,21 @@ def update_figure(selected_state):
     #         'x': 0.5,
     #         'xanchor': 'center',
     #         'yanchor': 'top'})
+    fig_1.update_layout(legend=dict(
+        yanchor="top",
+        y=0.99,
+        xanchor="left",
+        x=0.01
+    ))
 
     fig_1.update_xaxes(
-        title_text="Pollutant",
+        title_text="Dates",
         title_font={"size": 20},
         # showgrid=False,
     )
 
     fig_1.update_yaxes(
-        title_text="Average",
-        rangemode='tozero'
+        title_text="Quantity",
         # showgrid=False,
         # zeroline=False,
         # visible=False
