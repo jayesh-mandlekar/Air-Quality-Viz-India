@@ -237,7 +237,7 @@ def update_figure(start_date, end_date):
         y=0.99,
         xanchor="left",
         x=0.01
-    ))
+    ), showlegend=False,)
 
     fig_4.update_xaxes(
         title_text="Pollutant",
