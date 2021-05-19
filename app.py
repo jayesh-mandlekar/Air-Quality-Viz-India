@@ -79,8 +79,8 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'color': c
              children=[
                  html.Div(className='callback-flex',
                           children=[
-                              html.Div(className='padding-utility',children=[html.Label('States'),
-                                                 dcc.Dropdown(
+                              html.Div(className='padding-utility', children=[html.Label('States'),
+                                                                              dcc.Dropdown(
                                   id='state-dropdown',
                                   options=[
                                       {'label': i, 'value': i} for i in air_quality_df['State'].unique()
@@ -92,7 +92,7 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'color': c
                                                       start_date_placeholder_text="01/01/2001",
                                                       end_date_placeholder_text="12/31/2016",
                                                       calendar_orientation="vertical",
-                                                    
+
                                                       ),
                               ]),
                               html.Div(className='padding-utility', children=[
@@ -184,11 +184,10 @@ def update_figure(selected_state):
 
 @app.callback(
     Output('pollutant-trend-boxplot', 'figure'),
-    [Input('pollutant-dropdown', 'value'),
-     Input('Time-Slots', 'start_date'),
+    [Input('Time-Slots', 'start_date'),
      Input('Time-Slots', 'end_date')]
 )
-def update_figure(selected_pollutant, start_date, end_date):
+def update_figure(start_date, end_date):
     string_prefix = "You have selected: "
     if start_date is not None:
         start_date_object = date.fromisoformat(start_date)
@@ -212,13 +211,14 @@ def update_figure(selected_pollutant, start_date, end_date):
         (air_quality_df['Date'] > datetime(int(start_date_year), int(start_date_month), int(start_date_day), 0, 0, 0)) &
         (air_quality_df['Date'] < datetime(int(end_date_year), int(end_date_month), int(end_date_day), 0, 0, 0))]
 
-    Required_Pollutant = selected_pollutant
-    y_values = Time_Series_df.loc[:, Required_Pollutant].values.tolist()
-    x_values = Time_Series_df.Date
+    y_0_values = Time_Series_df.loc[:, Constant_Pollutants[0]].values.tolist()
+    y_1_values = Time_Series_df.loc[:, Constant_Pollutants[1]].values.tolist()
+    y_2_values = Time_Series_df.loc[:, Constant_Pollutants[2]].values.tolist()
 
-    fig_4 = go.Figure(go.Box(
-        x=y_values,
-    ))
+    fig_4 = go.Figure()
+    fig_4.add_trace(go.Box(y=y_0_values, name=Constant_Pollutants[0])),
+    fig_4.add_trace(go.Box(y=y_1_values, name=Constant_Pollutants[1])),
+    fig_4.add_trace(go.Box(y=y_2_values, name=Constant_Pollutants[2])),
 
     # fig_4.update_layout(
     #     title={
@@ -231,9 +231,21 @@ def update_figure(selected_pollutant, start_date, end_date):
 
     fig_4.update_layout(plot_bgcolor=colors['background'],
                         paper_bgcolor=colors['background'],
-                        font_color=colors['text'])
+                        font_color=colors['text'],
+                        legend=dict(
+        yanchor="top",
+        y=0.99,
+        xanchor="left",
+        x=0.01
+    ))
 
     fig_4.update_xaxes(
+        title_text="Pollutant",
+        title_font={"size": 20},
+        showgrid=False,
+    )
+
+    fig_4.update_yaxes(
         title_text="Count",
         title_font={"size": 20},
         showgrid=False,
@@ -311,11 +323,11 @@ def update_figure(selected_pollutant, start_date, end_date):
 
 @app.callback(
     Output('dotline-1-graph', 'figure'),
-    [   Input('state-dropdown', 'value'), 
+    [Input('state-dropdown', 'value'),
         Input('Time-Slots', 'start_date'),
         Input('Time-Slots', 'end_date'),
         Input('pollutant-dropdown', 'value')
-    ]
+     ]
 )
 def update_figure(selected_state, start_date, end_date, selected_Pollutant):
 
@@ -341,16 +353,17 @@ def update_figure(selected_state, start_date, end_date, selected_Pollutant):
     Time_Series_df = air_quality_df.loc[
         (air_quality_df['Date'] > datetime(int(start_date_year), int(start_date_month), int(start_date_day), 0, 0, 0)) &
         (air_quality_df['Date'] < datetime(int(end_date_year), int(end_date_month), int(end_date_day), 0, 0, 0))]
-    
-    Time_Series_df = Time_Series_df.loc[(Time_Series_df['State'] == selected_state), :]
+
+    Time_Series_df = Time_Series_df.loc[(
+        Time_Series_df['State'] == selected_state), :]
 
     fig_1 = go.Figure()
 
     fig_1.add_trace(go.Scatter(x=Time_Series_df['Date'], y=Time_Series_df[selected_Pollutant],
-                             mode='markers',
-                             name=selected_Pollutant,
-                            ))
-    
+                               mode='markers',
+                               name=selected_Pollutant,
+                               ))
+
     # fig_1.update_layout(
     #     title={
     #         'text': "Scatter and Line Plot - Amount of {}, {}, {} in {}".format(Constant_Pollutants[0], Constant_Pollutants[1], Constant_Pollutants[2], selected_state),
@@ -358,12 +371,7 @@ def update_figure(selected_state, start_date, end_date, selected_Pollutant):
     #         'x': 0.5,
     #         'xanchor': 'center',
     #         'yanchor': 'top'})
-    fig_1.update_layout(legend=dict(
-        yanchor="top",
-        y=0.99,
-        xanchor="left",
-        x=0.01
-    ),
+    fig_1.update_layout(
         plot_bgcolor=colors['background'],
         paper_bgcolor=colors['background'],
         font_color=colors['text'])
