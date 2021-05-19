@@ -98,9 +98,13 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'color': c
                               html.Div(className='padding-utility', children=[
                                   html.Label(
                                       'Pollutants', className='individual-padding'),
-                                  dcc.Dropdown(id='pollutant-dropdown', options=[
-                                      {'label': i, 'value': i} for i in Constant_Pollutants
-                                  ], value=Constant_Pollutants[0]),
+                                  dcc.RadioItems(
+                                      id='pollutant-dropdown',
+                                      options=[{'label': i, 'value': i}
+                                               for i in Constant_Pollutants],
+                                      value=Constant_Pollutants[0],
+                                      labelStyle={'display': 'inline-block'}
+                                  ),
                               ]),
                           ]),
 
