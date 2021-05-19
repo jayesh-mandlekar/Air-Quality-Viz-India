@@ -66,8 +66,13 @@ air_quality_df['Date'] = pd.to_datetime(air_quality_df['Date'])
 
 # -------------------------------------------------------------------------------------------------------
 
+colors = {
+    'background': '#202020',
+    'text': '#B3C100'
+}
 
-app.layout = html.Div(children=[
+
+app.layout = html.Div(style={'backgroundColor': colors['background'], 'color': colors['text']}, children=[
     html.H1(children='Indian Air Quality User Dashboard',
             style={'textAlign': 'center'}),
     html.Div(className='graph-callback-flex',
@@ -146,8 +151,10 @@ def update_figure(selected_state):
                             yanchor="top",
                             y=0.99,
                             xanchor="left",
-                            x=0.01
-                        ),
+                            x=0.50
+                        ), plot_bgcolor=colors['background'],
+                        paper_bgcolor=colors['background'],
+                        font_color=colors['text']
                         # title={
                         #     'text': "Stacked Bar Plot - Showing the Area Category Wise Pollution in {}".format(state),
                         #     'y': 0.92,
@@ -158,12 +165,12 @@ def update_figure(selected_state):
     fig_5.update_xaxes(
         title_text="Area Category",
         title_font={"size": 20},
-        # showgrid=False,
+        showgrid=False,
     )
 
     fig_5.update_yaxes(
         title_text="Average Quantity",
-        # showgrid=False,
+        showgrid=False,
         # zeroline=False,
         # visible=False
     )
@@ -218,10 +225,14 @@ def update_figure(selected_pollutant, start_date, end_date):
     #         'yanchor': 'top'},
     #         )
 
+    fig_4.update_layout(plot_bgcolor=colors['background'],
+                        paper_bgcolor=colors['background'],
+                        font_color=colors['text'])
+
     fig_4.update_xaxes(
         title_text="Count",
         title_font={"size": 20},
-        # showgrid=False,
+        showgrid=False,
     )
 
     return fig_4
@@ -274,15 +285,19 @@ def update_figure(selected_pollutant, start_date, end_date):
     #         'xanchor': 'center',
     #         'yanchor': 'top'})
 
+    fig_3.update_layout(plot_bgcolor=colors['background'],
+                        paper_bgcolor=colors['background'],
+                        font_color=colors['text'])
+
     fig_3.update_xaxes(
         title_text="Distribution",
         title_font={"size": 20},
-        # showgrid=False,
+        showgrid=False,
     )
 
     fig_3.update_yaxes(
         title_text="Count",
-        # showgrid=False,
+        showgrid=False,
         # zeroline=False,
         # visible=False
     )
@@ -344,16 +359,20 @@ def update_figure(selected_state, start_date, end_date, selected_Pollutant):
         y=0.99,
         xanchor="left",
         x=0.01
-    ))
+    ),
+        plot_bgcolor=colors['background'],
+        paper_bgcolor=colors['background'],
+        font_color=colors['text'])
 
     fig_1.update_xaxes(
         title_text="Dates",
         title_font={"size": 20},
-        # showgrid=False,
+        showgrid=False,
     )
 
     fig_1.update_yaxes(
         title_text="Quantity",
+        showgrid=False,
         # showgrid=False,
         # zeroline=False,
         # visible=False
@@ -413,14 +432,21 @@ def update_figure(start_date, end_date):
     #         'xanchor': 'center',
     #         'yanchor': 'top'})
 
+    fig_2.update_layout(plot_bgcolor=colors['background'],
+                        paper_bgcolor=colors['background'],
+                        font_color=colors['text'])
+
     fig_2.update_xaxes(
         title_text="States",
         title_font={"size": 20},
+        showgrid=False,
+        # zeroline=False,
+        # visible=False
     )
 
     fig_2.update_yaxes(
         title_text="Average",
-        # showgrid=False,
+        showgrid=False,
         # zeroline=False,
         # visible=False
     )
