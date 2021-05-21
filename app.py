@@ -106,6 +106,27 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'color': c
                                       labelStyle={'display': 'inline-block'}
                                   ),
                               ]),
+                              html.Div(className='padding-utility', children=[
+                                  html.Label(
+                                      'City', className='individual-padding'),
+                                  dcc.Dropdown(
+                                      id='city-dropdown',
+                                      options=[
+                                          {'label': i, 'value': i} for i in air_quality_df['City'].unique()
+                                      ], value='Kota'
+                                  ),
+                              ]),
+                              html.Div(className='padding-utility', children=[
+                                  html.Label(
+                                      'Area Category', className='individual-padding'),
+                                  dcc.RadioItems(
+                                      id='area-category-options',
+                                      options=[{'label': i, 'value': i}
+                                               for i in air_quality_df['Area Category'].unique()],
+                                      value='Industrial Area',
+                                      labelStyle={'display': 'inline-block'}
+                                  ),
+                              ]),
                           ]),
 
                  html.Div(className='graph-flex',
@@ -118,14 +139,62 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'color': c
                                   dcc.Graph(id='pollutant-trend-histogram'),
                                   dcc.Graph(id='pollutant-trend-boxplot'),
                               ]),
-                              html.Div(children=[
+                              html.Div(className='graph-child-flex', children=[
                                   dcc.Graph(
-                                      id='state-wise-area-category-bar-graph')
+                                      id='state-wise-area-category-bar-graph'),
+                                  dcc.Graph(
+                                      id='city-graph'
+                                  )
                               ]),
 
                           ]),
              ]),
 ])
+
+
+@app.callback(
+    Output('city-graph', 'figure'), [
+        Input('city-dropdown', 'value'),
+        Input('area-category-options', 'value')
+    ]
+)
+def update_figure(selected_city, selected_area_category):
+    df_city = air_quality_df.loc[air_quality_df['City'] == selected_city]
+    df = df_city.loc[df_city['Area Category'] == selected_area_category]
+    y_sulphur = df['Sulphur_Dioxide'].mean()
+    y_nitrogen = df['Nitrogen_Dioxide'].mean()
+    y_matter = df['Respirable_Suspended_Particulate_Matter'].mean()
+
+    fig_6 = go.Figure(data=go.Scatter(
+        x=Constant_Pollutants,
+        y=[y_sulphur, y_nitrogen, y_matter],
+        mode='markers',
+        marker=dict(
+            color=['rgb(93, 164, 214)', 'rgb(255, 144, 14)',
+                   'rgb(44, 160, 101)'],
+            size=[40, 60, 80],
+            # showscale=True,
+        )
+    ))
+
+    fig_6.update_layout(plot_bgcolor=colors['background'],
+                        paper_bgcolor=colors['background'],
+                        font_color=colors['text'])
+
+    fig_6.update_xaxes(
+        title_text="Pollutants",
+        title_font={"size": 20},
+        showgrid=False,
+    )
+
+    fig_6.update_yaxes(
+        title_text="Average Quantity",
+        showgrid=False,
+        zeroline=False,
+        # visible=False
+    )
+
+    return fig_6
 
 
 @app.callback(
