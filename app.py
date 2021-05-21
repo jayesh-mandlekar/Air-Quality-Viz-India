@@ -111,9 +111,6 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'color': c
                                       'City', className='individual-padding'),
                                   dcc.Dropdown(
                                       id='city-dropdown',
-                                      options=[
-                                          {'label': i, 'value': i} for i in air_quality_df['City'].unique()
-                                      ], value='Kota'
                                   ),
                               ]),
                               html.Div(className='padding-utility', children=[
@@ -121,9 +118,6 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'color': c
                                       'Area Category', className='individual-padding'),
                                   dcc.RadioItems(
                                       id='area-category-options',
-                                      options=[{'label': i, 'value': i}
-                                               for i in air_quality_df['Area Category'].unique()],
-                                      value='Industrial Area',
                                       labelStyle={'display': 'inline-block'}
                                   ),
                               ]),
@@ -150,6 +144,20 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'color': c
                           ]),
              ]),
 ])
+
+
+@app.callback(Output('city-dropdown', 'options'),
+              Input('state-dropdown', 'value'))
+def update_cities(selected_state):
+    return [{'label': i, 'value': i} for i in air_quality_df.loc[air_quality_df['State'] == selected_state, :]['City'].unique()]
+
+
+@app.callback(Output('area-category-options', 'options'),
+              [Input('city-dropdown', 'value'), 
+              Input('state-dropdown', 'value')])
+def update_categories(selected_city, selected_state):
+    df = air_quality_df.loc[air_quality_df['State'] == selected_state, :]
+    return [{'label': i, 'value': i} for i in df.loc[df['City'] == selected_city, :]['Area Category'].unique()]
 
 
 @app.callback(
