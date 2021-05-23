@@ -30,3 +30,19 @@
     padding: 8px 0px;
 }
 
+.buttons-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.links {
+  background-color: #B3C100;
+  border: none;
+  color: #202020;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
