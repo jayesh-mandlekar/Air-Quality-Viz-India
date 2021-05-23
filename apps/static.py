@@ -72,10 +72,11 @@ end_date_day = '0'
 
 layout = html.Div(style={'backgroundColor': colors['background'], 'color': colors['text']}, children=[
     html.H1(children='Indian Air Quality User Dashboard',
-            style={'textAlign': 'center'}),
-    dcc.Link('Dynamic Data Page', href='/dynamic-data'),
-    html.Br(),
-    dcc.Link('Home Page', href='/'),
+            style={'textAlign': 'center', 'padding': 15}),
+    html.Div(className="buttons-flex", children=[
+        dcc.Link('Dynamic Data Page', href='/dynamic-data', className="links"),
+        dcc.Link('Home Page', href='/', className="links"),
+    ]),
     html.Div(className='graph-callback-flex',
              children=[
                  html.Div(className='callback-flex',
