@@ -10,7 +10,6 @@ from dash.dependencies import Input, Output
 import plotly.express as px
 import pandas as pd
 
-
 app = dash.Dash(__name__)
 
 # Dataset Manipulation and Analysis
@@ -71,10 +70,17 @@ colors = {
     'text': '#B3C100'
 }
 
+app.layout = html.Div([
+    dcc.Location(id='url', refresh=False),
+    html.Div(id='page-content')
+])
 
-app.layout = html.Div(style={'backgroundColor': colors['background'], 'color': colors['text']}, children=[
+static_data_layout = html.Div(style={'backgroundColor': colors['background'], 'color': colors['text']}, children=[
     html.H1(children='Indian Air Quality User Dashboard',
             style={'textAlign': 'center'}),
+    dcc.Link('Go to Page 2', href='/page-2'),
+    html.Br(),
+    dcc.Link('Go back to home', href='/'),
     html.Div(className='graph-callback-flex',
              children=[
                  html.Div(className='callback-flex',
@@ -144,7 +150,6 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'color': c
                           ]),
              ]),
 ])
-
 
 @app.callback(Output('city-dropdown', 'options'),
               Input('state-dropdown', 'value'))
@@ -542,6 +547,31 @@ def update_figure(start_date, end_date):
 
     return fig_2
 
+
+dynamic_data_layout = html.Div([
+    html.H1('Page 2'),
+    html.Div(id='page-2-content'),
+    html.Br(),
+    dcc.Link('Go to Page 1', href='/page-1'),
+    html.Br(),
+    dcc.Link('Go back to home', href='/')
+])
+
+index_page = html.Div([
+    dcc.Link('Go to Page 1', href='/page-1'),
+    html.Br(),
+    dcc.Link('Go to Page 2', href='/page-2'),
+])
+
+@app.callback(Output('page-content', 'children'),
+              [Input('url', 'pathname')])
+def display_page(pathname):
+    if pathname == '/page-1':
+        return static_data_layout
+    elif pathname == '/page-2':
+        return dynamic_data_layout
+    else:
+        return index_page
 
 if __name__ == '__main__':
     app.run_server(debug=True, dev_tools_ui=False, dev_tools_props_check=False)
