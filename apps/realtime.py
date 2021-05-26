@@ -1,0 +1,134 @@
+import datetime
+import dash
+import dash_core_components as dcc
+from dash_core_components.Dropdown import Dropdown
+import dash_html_components as html
+from dash_html_components.Div import Div
+import dash_table
+from matplotlib.pyplot import cla, fill, text, title
+import plotly.graph_objects as go
+from dash.dependencies import Input, Output
+import plotly.express as px
+import pandas as pd
+
+from app import app
+
+current_df = pd.read_csv('./data/aqi-data.csv')
+current_df = current_df[['Timestamp','State','City','Temperature','Humidity','Condition','AQI','PM 2.5','PM 10']]
+
+colors = {
+    'background': '#A3B3C4',
+    'text': '#0A3D78'
+}
+
+layout = html.Div(style={'backgroundColor': colors['background'], 'color': colors['text']}, children=[
+    html.H1(children='Indian Air Quality User Dashboard',
+            style={'textAlign': 'center'}),
+    html.Div(className='graph-callback-flex',
+             children=[
+                 html.Div(className='callback-flex',
+                          children=[
+                          dcc.Link(html.Button('Historic'), href='/apps/historic'),
+                          dcc.Link(html.Button('Real Time'), href='/apps/realtime'),
+                              html.Div(className='padding-utility', children=[html.Label('States'),
+                              dcc.Dropdown(
+                                  id='state-dropdown',
+                                  options=[
+                                      {'label': i, 'value': i} for i in current_df['State'].sort_values().unique()
+                                  ],
+                                  value=current_df['State'].sort_values().unique()[0],
+                                  clearable=False
+                              )]),
+                              html.Div(className='padding-utility', children=[
+                                  html.Label(
+                                      'City', className='individual-padding'),
+                                  dcc.Dropdown(
+                                      id='city-dropdown-2',
+                                      clearable=False
+                                  ),
+                              ]),
+                          ]),
+                ]),
+                html.Div(className='graph-flex',
+                         children=[
+                             html.Div(className='graph-child-flex', children=[
+                                 dcc.Graph(id='pollutant-bar'),
+                             ]),
+                             html.Div(className='graph-child-flex', children=[
+                                 dcc.Graph(id='state-city-bar'),
+                        ]),
+                ]),
+                dash_table.DataTable(
+                    id='table',
+                    columns=[{"name": i, "id": i} for i in current_df.columns],
+                    data=current_df.to_dict('records'),
+                    filter_action="native",
+                    sort_action="native",
+                )
+    ])
+
+
+
+@app.callback(
+    dash.dependencies.Output('city-dropdown-2', 'options'),
+    [dash.dependencies.Input('state-dropdown', 'value')]
+)
+def update_date_dropdown(name):
+    return [{'label': i, 'value': i} for i in current_df.loc[current_df['State'] == name]['City'].sort_values().unique()]
+
+@app.callback(
+    Output('pollutant-bar', 'figure'),
+    [Input('state-dropdown', 'value'),
+     Input('city-dropdown-2', 'value')]
+)
+def update_figure(state, city):
+    features = ['PM 2.5', 'PM 10']
+    required_df = current_df[(current_df['State'] == state) & (current_df['City'] == city)][features]
+    x_columns = required_df.index.tolist()
+
+    fig_1 = go.Figure(data=[
+        go.Bar(name='PM 2.5', x=x_columns,
+               y=required_df['PM 2.5']),
+        go.Bar(name='PM 10', x=x_columns,
+               y=required_df['PM 10']),
+    ])
+
+    fig_1.update_layout(autosize=False,
+    width=1200,
+    height=700,legend=dict(
+                            yanchor="top",
+                            y=0.99,
+                            xanchor="right",
+                            x=0.99
+                        ), plot_bgcolor=colors['background'],
+                        paper_bgcolor=colors['background'],
+                        font_color=colors['text']
+                        # title={
+                        #     'text': "Stacked Bar Plot - Showing the Area Category Wise Pollution in {}".format(state),
+                        #     'y': 0.92,
+                        #     'x': 0.5,
+                        #     'xanchor': 'center',
+                        #     'yanchor': 'top'}))
+                        )
+    fig_1.update_xaxes(
+        title_text="Pollutants in "+city,
+        title_font={"size": 20},
+        showgrid=False,
+    )
+
+    fig_1.update_yaxes(
+        title_text="Pollutant Quantity (in ug/m3)",
+        showgrid=True,
+        # zeroline=False,
+        # visible=False
+    )
+
+    return fig_1
+
+@app.callback(
+    Output('state-city-bar', 'figure'),
+    [Input('state-dropdown', 'state'),
+     Input('city-dropdown-2', 'city')]
+)
+def update_figure(selected_state, selected_city):
+    return

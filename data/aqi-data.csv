@@ -1,0 +1,437 @@
+,AQI,City,Condition,Humidity,PM 10,PM 2.5,State,Temperature,Timestamp
+0,93,Addanki,Moderate,43,41,26,Andhra Pradesh,34,27-05-2021 01:33:29
+1,75,Adoni,Moderate,65,406,10,Andhra Pradesh,27,27-05-2021 01:33:29
+2,152,Amalapuram,Poor,76,222,105,Andhra Pradesh,31,27-05-2021 01:33:29
+3,104,Amudalavalasa,Poor,72,52,35,Andhra Pradesh,30,27-05-2021 01:33:29
+4,144,Anakapalle,Poor,69,339,68,Andhra Pradesh,30,27-05-2021 01:33:29
+5,64,Anantapur,Moderate,61,27,10,Andhra Pradesh,27,27-05-2021 01:33:29
+6,65,Badvel,Moderate,50,44,13,Andhra Pradesh,31,27-05-2021 01:33:29
+7,98,Bapatla,Moderate,39,48,24,Andhra Pradesh,33,27-05-2021 01:33:29
+8,107,Bezwada,Poor,37,58,22,Andhra Pradesh,33,27-05-2021 01:33:29
+9,132,Bhimavaram,Poor,70,164,86,Andhra Pradesh,31,27-05-2021 01:33:29
+10,143,Bhimunipatnam,Poor,63,336,68,Andhra Pradesh,31,27-05-2021 01:33:29
+11,104,Bobbili,Poor,59,64,32,Andhra Pradesh,30,27-05-2021 01:33:29
+12,113,Chicacole,Poor,72,97,40,Andhra Pradesh,30,27-05-2021 01:33:29
+13,101,Chilakalurupet,Poor,41,51,23,Andhra Pradesh,33,27-05-2021 01:33:29
+14,87,Chimakurti,Moderate,41,30,21,Andhra Pradesh,34,27-05-2021 01:33:29
+15,127,Chipurupalle,Poor,69,185,51,Andhra Pradesh,29,27-05-2021 01:33:29
+16,97,Chirala,Moderate,39,45,25,Andhra Pradesh,33,27-05-2021 01:33:29
+17,55,Chittoor,Moderate,63,66,21,Andhra Pradesh,29,27-05-2021 01:33:29
+18,72,Cuddapah,Moderate,55,72,33,Andhra Pradesh,30,27-05-2021 01:33:29
+19,47,Dharmavaram,Good,64,39,14,Andhra Pradesh,27,27-05-2021 01:33:29
+20,143,Draksharama,Poor,72,198,102,Andhra Pradesh,29,27-05-2021 01:33:29
+21,113,Ellore,Poor,46,82,42,Andhra Pradesh,32,27-05-2021 01:33:29
+22,89,Emmiganur,Moderate,59,82,12,Andhra Pradesh,28,27-05-2021 01:33:29
+23,97,Giddalur,Moderate,52,19,13,Andhra Pradesh,30,27-05-2021 01:33:29
+24,107,Gudivada,Poor,43,55,23,Andhra Pradesh,32,27-05-2021 01:33:29
+25,68,Guntakal,Moderate,66,26,8,Andhra Pradesh,28,27-05-2021 01:33:29
+26,107,Guntur,Poor,41,58,22,Andhra Pradesh,33,27-05-2021 01:33:29
+27,46,Hindupur,Good,69,44,14,Andhra Pradesh,26,27-05-2021 01:33:29
+28,78,Jammalamadugu,Moderate,55,22,11,Andhra Pradesh,30,27-05-2021 01:33:29
+29,42,Kadiri,Good,67,45,15,Andhra Pradesh,26,27-05-2021 01:33:29
+30,136,Kakinada,Poor,72,174,91,Andhra Pradesh,31,27-05-2021 01:33:29
+31,98,Kandukur,Moderate,44,30,18,Andhra Pradesh,33,27-05-2021 01:33:29
+32,88,Kavali,Moderate,47,42,19,Andhra Pradesh,34,27-05-2021 01:33:29
+33,75,Koilkuntla,Moderate,58,17,11,Andhra Pradesh,30,27-05-2021 01:33:29
+34,148,Kovvur,Poor,60,199,97,Andhra Pradesh,30,27-05-2021 01:33:29
+35,75,Kurnool,Moderate,60,293,17,Andhra Pradesh,27,27-05-2021 01:33:29
+36,75,Macherla,Moderate,37,51,27,Andhra Pradesh,33,27-05-2021 01:33:29
+37,102,Machilipatnam,Poor,56,48,26,Andhra Pradesh,33,27-05-2021 01:33:29
+38,46,Madanapalle,Good,73,51,16,Andhra Pradesh,25,27-05-2021 01:33:29
+39,142,Mandapeta,Poor,66,207,106,Andhra Pradesh,30,27-05-2021 01:33:29
+40,78,Mangalagiri,Moderate,45,54,25,Andhra Pradesh,31,27-05-2021 01:33:29
+41,94,Markapur,Moderate,46,52,24,Andhra Pradesh,33,27-05-2021 01:33:29
+42,59,Nagari,Moderate,61,73,26,Andhra Pradesh,31,27-05-2021 01:33:29
+43,76,Nandyal,Moderate,54,19,13,Andhra Pradesh,30,27-05-2021 01:33:29
+44,100,Narasannapeta,Moderate,72,52,34,Andhra Pradesh,30,27-05-2021 01:33:29
+45,130,Narasapur,Poor,73,141,82,Andhra Pradesh,31,27-05-2021 01:33:29
+46,113,Narasaraopet,Poor,45,51,23,Andhra Pradesh,34,27-05-2021 01:33:29
+47,62,Nellore,Moderate,49,61,24,Andhra Pradesh,34,27-05-2021 01:33:29
+48,142,Nidadavole,Poor,66,207,106,Andhra Pradesh,30,27-05-2021 01:33:29
+49,87,Ongole,Moderate,43,32,22,Andhra Pradesh,33,27-05-2021 01:33:29
+50,134,Palakollu,Poor,74,169,88,Andhra Pradesh,31,27-05-2021 01:33:29
+51,48,Palmaner,Good,71,54,17,Andhra Pradesh,25,27-05-2021 01:33:29
+52,73,Pamidi,Moderate,62,20,9,Andhra Pradesh,28,27-05-2021 01:33:29
+53,47,Parigi,Good,73,55,18,Andhra Pradesh,24,27-05-2021 01:33:29
+54,107,Pedana,Poor,56,61,31,Andhra Pradesh,33,27-05-2021 01:33:29
+55,103,Pedda Nandipadu,Poor,39,53,23,Andhra Pradesh,33,27-05-2021 01:33:29
+56,132,Pithapuram,Poor,72,152,80,Andhra Pradesh,31,27-05-2021 01:33:29
+57,115,Ponduru,Poor,67,120,43,Andhra Pradesh,30,27-05-2021 01:33:29
+58,104,Ponnuru,Poor,39,54,23,Andhra Pradesh,33,27-05-2021 01:33:29
+59,69,Proddatur,Moderate,51,31,12,Andhra Pradesh,30,27-05-2021 01:33:29
+60,52,Pulivendla,Moderate,59,36,13,Andhra Pradesh,28,27-05-2021 01:33:29
+61,45,Punganuru,Good,72,50,16,Andhra Pradesh,25,27-05-2021 01:33:29
+62,59,Puttur,Moderate,46,72,22,Andhra Pradesh,31,27-05-2021 01:33:29
+63,153,Rajahmundry,Poor,66,207,106,Andhra Pradesh,30,27-05-2021 01:33:29
+64,97,Rayachoti,Moderate,59,120,45,Andhra Pradesh,28,27-05-2021 01:33:29
+65,102,Repalle,Poor,61,50,25,Andhra Pradesh,32,27-05-2021 01:33:29
+66,138,Samalkot,Poor,72,184,96,Andhra Pradesh,31,27-05-2021 01:33:29
+67,139,Sattenapalle,Poor,42,128,47,Andhra Pradesh,33,27-05-2021 01:33:29
+68,107,Tadepalle,Poor,37,58,22,Andhra Pradesh,33,27-05-2021 01:33:29
+69,141,Tadepallegudem,Poor,62,207,106,Andhra Pradesh,30,27-05-2021 01:33:29
+70,74,Tadpatri,Moderate,61,20,11,Andhra Pradesh,29,27-05-2021 01:33:29
+71,143,Tanuku,Poor,64,216,111,Andhra Pradesh,31,27-05-2021 01:33:29
+72,107,Tenali,Poor,44,58,22,Andhra Pradesh,33,27-05-2021 01:33:29
+73,71,Tirupati,Moderate,46,70,16,Andhra Pradesh,31,27-05-2021 01:33:29
+74,110,Tuni,Poor,66,82,36,Andhra Pradesh,30,27-05-2021 01:33:29
+75,60,Venkatagiri,Moderate,47,73,20,Andhra Pradesh,32,27-05-2021 01:33:29
+76,87,Vinukonda,Moderate,43,36,24,Andhra Pradesh,33,27-05-2021 01:33:29
+77,150,Vishakhapatnam,Poor,64,262,62,Andhra Pradesh,30,27-05-2021 01:33:29
+78,141,Vizianagaram,Poor,68,300,64,Andhra Pradesh,29,27-05-2021 01:33:29
+79,36,Itanagar,Good,92,17,9,Arunachal Pradesh,25,27-05-2021 01:33:29
+80,25,Dibrugarh,Good,93,31,20,Assam,29,27-05-2021 01:33:29
+81,32,Dispur,Good,74,25,19,Assam,25,27-05-2021 01:33:29
+82,45,Gauripur,Good,88,31,20,Assam,26,27-05-2021 01:33:29
+83,47,Guwahati,Good,97,25,15,Assam,27,27-05-2021 01:33:29
+84,25,Jorhat,Good,95,31,14,Assam,27,27-05-2021 01:33:29
+85,35,Silchar,Good,87,30,14,Assam,27,27-05-2021 01:33:29
+86,31,Tezpur,Good,89,24,15,Assam,27,27-05-2021 01:33:29
+87,37,Aurangabad,Good,94,29,6,Bihar,24,27-05-2021 01:33:29
+88,63,Begusarai,Moderate,88,68,24,Bihar,25,27-05-2021 01:33:29
+89,84,Bhagalpur,Moderate,100,40,26,Bihar,25,27-05-2021 01:33:29
+90,38,Deo,Good,94,27,6,Bihar,24,27-05-2021 01:33:29
+91,24,Gaya,Good,99,13,6,Bihar,27,27-05-2021 01:33:29
+92,36,Muzaffarpur,Good,91,12,15,Bihar,26,27-05-2021 01:33:29
+93,59,Patna,Moderate,97,53,22,Bihar,24,27-05-2021 01:33:29
+94,62,Purnea,Moderate,86,35,22,Bihar,26,27-05-2021 01:33:29
+95,99,Rajgir,Moderate,92,102,33,Bihar,24,27-05-2021 01:33:29
+96,50,Saharsa,Good,88,53,21,Bihar,25,27-05-2021 01:33:29
+97,86,Chandigarh,Moderate,38,65,46,Chandigarh,27,27-05-2021 01:33:29
+98,111,Amarkantak,Poor,78,38,24,Chhattisgarh,21,27-05-2021 01:33:29
+99,77,Bhilai,Moderate,78,71,49,Chhattisgarh,29,27-05-2021 01:33:29
+100,96,Bilaspur,Moderate,66,36,25,Chhattisgarh,28,27-05-2021 01:33:29
+101,63,Durg,Moderate,53,68,47,Chhattisgarh,29,27-05-2021 01:33:29
+102,97,Raipur,Moderate,78,71,50,Chhattisgarh,31,27-05-2021 01:33:29
+103,80,Silvassa,Moderate,81,94,24,Dadra And Nagar Haveli,27,27-05-2021 01:33:29
+104,50,Diu,Good,79,37,20,Daman And Diu,29,27-05-2021 01:33:29
+105,176,New Delhi,Poor,50,143,90,Delhi,30,27-05-2021 01:33:29
+106,48,Curchorem,Good,85,43,18,Goa,26,27-05-2021 01:33:29
+107,48,Loutolim,Good,84,44,19,Goa,29,27-05-2021 01:33:29
+108,49,Panaji,Good,85,45,19,Goa,29,27-05-2021 01:33:29
+109,84,Ahmedabad,Moderate,71,87,36,Gujarat,30,27-05-2021 01:33:29
+110,94,Ankleshwar,Moderate,65,115,34,Gujarat,31,27-05-2021 01:33:29
+111,75,Bhavnagar,Moderate,69,73,26,Gujarat,30,27-05-2021 01:33:29
+112,55,Bhuj,Moderate,82,25,13,Gujarat,30,27-05-2021 01:33:29
+113,78,Chikhli,Moderate,80,92,25,Gujarat,28,27-05-2021 01:33:29
+114,80,Daman,Moderate,78,95,25,Gujarat,28,27-05-2021 01:33:29
+115,98,Dholka,Moderate,84,104,39,Gujarat,31,27-05-2021 01:33:29
+116,54,Dwarka,Moderate,82,39,20,Gujarat,30,27-05-2021 01:33:29
+117,89,Ghandinagar,Moderate,73,96,37,Gujarat,32,27-05-2021 01:33:29
+118,83,Godhra,Moderate,70,83,32,Gujarat,30,27-05-2021 01:33:29
+119,37,Jamnagar,Good,82,25,14,Gujarat,29,27-05-2021 01:33:29
+120,79,Jasdan,Moderate,79,74,53,Gujarat,28,27-05-2021 01:33:29
+121,88,Khambhat,Moderate,81,93,34,Gujarat,31,27-05-2021 01:33:29
+122,97,Khed Brahma,Moderate,68,94,41,Gujarat,31,27-05-2021 01:33:29
+123,87,Mahesana,Moderate,69,95,37,Gujarat,31,27-05-2021 01:33:29
+124,73,Meghraj,Moderate,73,74,31,Gujarat,30,27-05-2021 01:33:29
+125,52,Mundra,Moderate,84,37,20,Gujarat,30,27-05-2021 01:33:29
+126,53,Naliya,Moderate,84,32,17,Gujarat,30,27-05-2021 01:33:29
+127,94,Nandod,Moderate,79,79,27,Gujarat,29,27-05-2021 01:33:29
+128,75,Navsari,Moderate,80,87,24,Gujarat,28,27-05-2021 01:33:29
+129,53,Porbandar,Moderate,85,41,22,Gujarat,30,27-05-2021 01:33:29
+130,60,Rajkot,Moderate,76,45,34,Gujarat,30,27-05-2021 01:33:29
+131,72,Sihor,Moderate,69,61,23,Gujarat,29,27-05-2021 01:33:29
+132,103,Surat,Poor,86,106,35,Gujarat,30,27-05-2021 01:33:29
+133,110,Vadodara,Poor,79,120,46,Gujarat,30,27-05-2021 01:33:29
+134,79,Valsad,Moderate,79,94,25,Gujarat,28,27-05-2021 01:33:29
+135,64,Vapi,Moderate,73,72,29,Gujarat,29,27-05-2021 01:33:29
+136,108,Ambala,Poor,24,114,61,Haryana,30,27-05-2021 01:33:29
+137,154,Bhiwani,Poor,35,114,58,Haryana,32,27-05-2021 01:33:29
+138,214,Faridabad,Unhealthy,44,212,85,Haryana,28,27-05-2021 01:33:29
+139,163,Gurgaon,Poor,44,135,74,Haryana,30,27-05-2021 01:33:29
+140,138,Hisar,Poor,27,192,67,Haryana,33,27-05-2021 01:33:29
+141,102,Karnal,Poor,29,112,41,Haryana,32,27-05-2021 01:33:29
+142,53,Panchkula,Moderate,30,34,32,Haryana,31,27-05-2021 01:33:29
+143,144,Panipat,Poor,35,184,57,Haryana,29,27-05-2021 01:33:29
+144,136,Rohtak,Poor,33,164,66,Haryana,31,27-05-2021 01:33:29
+145,140,Sirsa,Poor,23,175,68,Haryana,33,27-05-2021 01:33:29
+146,179,Sonipat,Poor,37,189,63,Haryana,31,27-05-2021 01:33:29
+147,106,Dharmsala,Poor,30,35,17,Himachal Pradesh,20,27-05-2021 01:33:29
+148,111,Kulu,Poor,31,22,15,Himachal Pradesh,15,27-05-2021 01:33:29
+149,146,Manali,Poor,49,22,15,Himachal Pradesh,8,27-05-2021 01:33:29
+150,68,Shimla,Moderate,44,70,51,Himachal Pradesh,15,27-05-2021 01:33:29
+151,70,Solan,Moderate,31,82,46,Himachal Pradesh,19,27-05-2021 01:33:29
+152,110,Bandipura,Poor,61,137,52,Jammu And Kashmir,14,27-05-2021 01:33:29
+153,109,Baramula,Poor,62,137,52,Jammu And Kashmir,14,27-05-2021 01:33:29
+154,105,Handwara,Poor,66,133,51,Jammu And Kashmir,12,27-05-2021 01:33:29
+155,77,Jammu,Moderate,30,104,55,Jammu And Kashmir,24,27-05-2021 01:33:29
+156,108,Kulgam,Poor,79,137,52,Jammu And Kashmir,12,27-05-2021 01:33:29
+157,90,Rajaori,Moderate,27,109,59,Jammu And Kashmir,23,27-05-2021 01:33:29
+158,110,Sopur,Poor,77,137,52,Jammu And Kashmir,13,27-05-2021 01:33:29
+159,110,Srinagar,Poor,58,137,52,Jammu And Kashmir,15,27-05-2021 01:33:29
+160,78,Udhampur,Moderate,25,77,34,Jammu And Kashmir,25,27-05-2021 01:33:29
+161,85,Chakradharpur,Moderate,94,13,13,Jharkhand,24,27-05-2021 01:33:29
+162,49,Dhanbad,Good,91,19,19,Jharkhand,24,27-05-2021 01:33:29
+163,61,Jamshedpur,Moderate,100,19,19,Jharkhand,26,27-05-2021 01:33:29
+164,76,Ranchi,Moderate,100,62,21,Jharkhand,23,27-05-2021 01:33:29
+165,69,Bangalore,Moderate,75,58,28,Karnataka,27,27-05-2021 01:33:29
+166,45,Belgaum,Good,87,44,17,Karnataka,22,27-05-2021 01:33:29
+167,71,Bellary,Moderate,73,33,6,Karnataka,27,27-05-2021 01:33:29
+168,52,Belur,Moderate,89,29,18,Karnataka,21,27-05-2021 01:33:29
+169,103,Bidar,Poor,46,77,27,Karnataka,29,27-05-2021 01:33:29
+170,61,Bijapur,Moderate,73,53,20,Karnataka,25,27-05-2021 01:33:29
+171,68,Channarayapatna,Moderate,89,48,18,Karnataka,21,27-05-2021 01:33:29
+172,50,Davangere,Good,82,54,7,Karnataka,24,27-05-2021 01:33:29
+173,100,Gulbarga,Moderate,52,72,19,Karnataka,30,27-05-2021 01:33:29
+174,96,Hassan,Moderate,93,36,11,Karnataka,20,27-05-2021 01:33:29
+175,86,Hospet,Moderate,74,32,5,Karnataka,26,27-05-2021 01:33:29
+176,69,Hubli,Moderate,83,64,26,Karnataka,24,27-05-2021 01:33:29
+177,49,Kolar,Good,82,53,18,Karnataka,23,27-05-2021 01:33:29
+178,41,Mandya,Good,88,66,16,Karnataka,22,27-05-2021 01:33:29
+179,88,Mangalore,Moderate,81,103,37,Karnataka,28,27-05-2021 01:33:29
+180,73,Mysore,Moderate,88,104,28,Karnataka,22,27-05-2021 01:33:29
+181,90,Raichur,Moderate,55,32,29,Karnataka,24,27-05-2021 01:33:29
+182,49,Shimoga,Good,91,45,17,Karnataka,23,27-05-2021 01:33:29
+183,48,Shrirangapattana,Good,88,62,24,Karnataka,22,27-05-2021 01:33:29
+184,47,Tumkur,Good,87,77,21,Karnataka,22,27-05-2021 01:33:29
+185,66,Udipi,Moderate,80,14,13,Karnataka,27,27-05-2021 01:33:29
+186,34,Alleppey,Good,91,31,14,Kerala,25,27-05-2021 01:33:29
+187,49,Angamali,Good,93,19,11,Kerala,24,27-05-2021 01:33:29
+188,40,Calicut,Good,79,24,19,Kerala,26,27-05-2021 01:33:29
+189,23,Kochi,Good,97,18,10,Kerala,24,27-05-2021 01:33:29
+190,41,Palghat,Good,95,22,10,Kerala,25,27-05-2021 01:33:29
+191,33,Pathanamthitta,Good,96,46,18,Kerala,25,27-05-2021 01:33:29
+192,51,Quilon,Moderate,87,59,26,Kerala,28,27-05-2021 01:33:29
+193,53,Thiruvananthapuram,Moderate,83,55,21,Kerala,27,27-05-2021 01:33:29
+194,44,Trichur,Good,92,30,17,Kerala,26,27-05-2021 01:33:29
+195,60,Betma,Moderate,62,52,26,Madhya Pradesh,32,27-05-2021 01:33:29
+196,87,Bhopal,Moderate,44,77,26,Madhya Pradesh,30,27-05-2021 01:33:29
+197,87,Burhanpur,Moderate,50,55,26,Madhya Pradesh,30,27-05-2021 01:33:29
+198,112,Gwalior,Poor,46,115,43,Madhya Pradesh,27,27-05-2021 01:33:29
+199,90,Indore,Moderate,55,90,35,Madhya Pradesh,28,27-05-2021 01:33:29
+200,166,Jabalpur,Poor,66,144,86,Madhya Pradesh,27,27-05-2021 01:33:29
+201,100,Khajuraho,Moderate,57,56,31,Madhya Pradesh,28,27-05-2021 01:33:29
+202,100,Maihar,Moderate,9,56,31,Madhya Pradesh,41,27-05-2021 01:33:29
+203,88,Mandsaur,Moderate,55,75,30,Madhya Pradesh,29,27-05-2021 01:33:29
+204,103,Orchha,Poor,47,114,49,Madhya Pradesh,29,27-05-2021 01:33:29
+205,100,Ratlam,Moderate,51,110,40,Madhya Pradesh,31,27-05-2021 01:33:29
+206,79,Saugor,Moderate,39,70,45,Madhya Pradesh,32,27-05-2021 01:33:29
+207,96,Ujjain,Moderate,52,76,26,Madhya Pradesh,28,27-05-2021 01:33:29
+208,86,Umaria,Moderate,68,66,27,Madhya Pradesh,27,27-05-2021 01:33:29
+209,86,Vidisha,Moderate,39,57,24,Madhya Pradesh,30,27-05-2021 01:33:29
+210,78,Ahmadnagar,Moderate,78,101,54,Maharashtra,24,27-05-2021 01:33:29
+211,52,Akola,Moderate,45,38,21,Maharashtra,34,27-05-2021 01:33:29
+212,59,Amravati,Moderate,41,54,29,Maharashtra,32,27-05-2021 01:33:29
+213,56,Aurangabad,Moderate,65,63,34,Maharashtra,29,27-05-2021 01:33:29
+214,85,Bhayandar,Moderate,73,102,38,Maharashtra,30,27-05-2021 01:33:29
+215,97,Bhiwandi,Moderate,78,108,29,Maharashtra,28,27-05-2021 01:33:29
+216,76,Bhusaval,Moderate,53,51,27,Maharashtra,30,27-05-2021 01:33:29
+217,100,Chanda,Moderate,33,85,28,Maharashtra,32,27-05-2021 01:33:29
+218,48,Chinchvad,Good,83,49,32,Maharashtra,25,27-05-2021 01:33:29
+219,58,Dhulia,Moderate,61,46,24,Maharashtra,28,27-05-2021 01:33:29
+220,51,Ichalkaranji,Moderate,83,22,10,Maharashtra,23,27-05-2021 01:33:29
+221,69,Jalgaon,Moderate,53,53,27,Maharashtra,29,27-05-2021 01:33:29
+222,57,Junnar,Moderate,84,66,30,Maharashtra,23,27-05-2021 01:33:29
+223,78,Kalyan,Moderate,76,82,18,Maharashtra,29,27-05-2021 01:33:29
+224,49,Khed,Good,86,53,31,Maharashtra,27,27-05-2021 01:33:29
+225,54,Kolhapur,Moderate,83,21,10,Maharashtra,23,27-05-2021 01:33:29
+226,95,Latur,Moderate,46,58,22,Maharashtra,28,27-05-2021 01:33:29
+227,48,Malegaon,Good,74,55,27,Maharashtra,26,27-05-2021 01:33:29
+228,65,Mumbai,Moderate,80,61,20,Maharashtra,30,27-05-2021 01:33:29
+229,93,Nagpur,Moderate,51,108,43,Maharashtra,30,27-05-2021 01:33:29
+230,61,Nanded,Moderate,39,44,20,Maharashtra,32,27-05-2021 01:33:29
+231,92,Nasik,Moderate,87,81,25,Maharashtra,25,27-05-2021 01:33:29
+232,87,Osmanabad,Moderate,62,57,26,Maharashtra,26,27-05-2021 01:33:29
+233,60,Panchgani,Moderate,84,60,37,Maharashtra,19,27-05-2021 01:33:29
+234,49,Parbhani,Good,48,40,19,Maharashtra,31,27-05-2021 01:33:29
+235,78,Pune,Moderate,76,78,38,Maharashtra,25,27-05-2021 01:33:29
+236,55,Sangli,Moderate,85,18,9,Maharashtra,23,27-05-2021 01:33:29
+237,80,Solapur,Moderate,58,59,18,Maharashtra,30,27-05-2021 01:33:29
+238,103,Thane,Poor,76,106,6,Maharashtra,28,27-05-2021 01:33:29
+239,80,Ulhasnagar,Moderate,77,86,19,Maharashtra,28,27-05-2021 01:33:29
+240,80,Uran,Moderate,83,71,35,Maharashtra,28,27-05-2021 01:33:29
+241,92,Yavatmal,Moderate,39,54,27,Maharashtra,32,27-05-2021 01:33:29
+242,21,Imphal,Good,90,32,11,Manipur,22,27-05-2021 01:33:29
+243,32,Shillong,Good,53,18,14,Meghalaya,24,27-05-2021 01:33:29
+244,24,Aizawl,Good,46,28,7,Mizoram,23,27-05-2021 01:33:29
+245,26,Kohima,Good,90,35,11,Nagaland,20,27-05-2021 01:33:29
+246,127,Bhubaneshwar,Poor,88,62,21,Odisha,27,27-05-2021 01:33:29
+247,118,Brahmapur,Poor,73,55,38,Odisha,30,27-05-2021 01:33:29
+248,98,Cuttack,Moderate,88,9,6,Odisha,26,27-05-2021 01:33:29
+249,94,Jatani,Moderate,83,14,10,Odisha,27,27-05-2021 01:33:29
+250,90,Konarka,Moderate,76,46,32,Odisha,28,27-05-2021 01:33:29
+251,84,Puri,Moderate,80,42,29,Odisha,29,27-05-2021 01:33:29
+252,44,Raurkela,Good,90,5,3,Odisha,24,27-05-2021 01:33:29
+253,30,Sambalpur,Good,86,6,4,Odisha,24,27-05-2021 01:33:29
+254,43,Puducherry,Good,73,45,19,Puducherry,29,27-05-2021 01:33:29
+255,92,Abohar,Moderate,22,168,90,Punjab,31,27-05-2021 01:33:29
+256,132,Amritsar,Poor,26,146,54,Punjab,30,27-05-2021 01:33:29
+257,98,Haripur,Moderate,34,117,48,Punjab,26,27-05-2021 01:33:29
+258,35,Hoshiarpur,Good,42,21,21,Punjab,27,27-05-2021 01:33:29
+259,144,Jalandhar,Poor,33,142,72,Punjab,27,27-05-2021 01:33:29
+260,108,Khem Karan,Poor,32,114,47,Punjab,29,27-05-2021 01:33:29
+261,138,Ludhiana,Poor,31,175,61,Punjab,28,27-05-2021 01:33:29
+262,188,Malaut,Poor,35,199,114,Punjab,16,27-05-2021 01:33:29
+263,180,Mauli,Poor,17,210,28,Punjab,27,27-05-2021 01:33:29
+264,104,Pathankot,Poor,31,69,33,Punjab,25,27-05-2021 01:33:29
+265,228,Patiala,Unhealthy,30,290,105,Punjab,27,27-05-2021 01:33:29
+266,63,Abu,Moderate,66,64,28,Rajasthan,24,27-05-2021 01:33:29
+267,78,Ajmer,Moderate,45,56,44,Rajasthan,29,27-05-2021 01:33:29
+268,86,Alwar,Moderate,38,97,27,Rajasthan,30,27-05-2021 01:33:29
+269,94,Bharatpur,Moderate,39,111,79,Rajasthan,31,27-05-2021 01:33:29
+270,72,Bhilwara,Moderate,55,74,47,Rajasthan,29,27-05-2021 01:33:29
+271,88,Bikaner,Moderate,35,49,32,Rajasthan,32,27-05-2021 01:33:29
+272,101,Chittaurgarh,Poor,57,104,56,Rajasthan,29,27-05-2021 01:33:29
+273,66,Jaipur,Moderate,37,66,28,Rajasthan,26,27-05-2021 01:33:29
+274,109,Jaisalmer,Poor,35,43,18,Rajasthan,33,27-05-2021 01:33:29
+275,106,Jalor,Poor,58,133,55,Rajasthan,32,27-05-2021 01:33:29
+276,76,Jodhpur,Moderate,44,64,37,Rajasthan,33,27-05-2021 01:33:29
+277,96,Kota,Moderate,34,103,78,Rajasthan,32,27-05-2021 01:33:29
+278,104,Pali,Poor,46,140,51,Rajasthan,31,27-05-2021 01:33:29
+279,90,Pushkar,Moderate,50,54,54,Rajasthan,29,27-05-2021 01:33:29
+280,117,Sikar,Poor,47,122,41,Rajasthan,30,27-05-2021 01:33:29
+281,71,Sriganganagar,Moderate,36,54,43,Rajasthan,34,27-05-2021 01:33:29
+282,109,Tonk,Poor,52,123,47,Rajasthan,32,27-05-2021 01:33:29
+283,60,Udaipur,Moderate,57,53,22,Rajasthan,29,27-05-2021 01:33:29
+284,38,Gangtok,Good,96,28,16,Sikkim,18,27-05-2021 01:33:29
+285,61,Chennai,Moderate,60,49,30,Tamil Nadu,32,27-05-2021 01:33:29
+286,63,Coimbatore,Moderate,83,59,24,Tamil Nadu,23,27-05-2021 01:33:29
+287,64,Conjeeveram,Moderate,61,87,36,Tamil Nadu,30,27-05-2021 01:33:29
+288,43,Cuddalore,Good,73,45,19,Tamil Nadu,30,27-05-2021 01:33:29
+289,66,Dindigul,Moderate,83,50,32,Tamil Nadu,25,27-05-2021 01:33:29
+290,52,Erode,Moderate,81,31,12,Tamil Nadu,26,27-05-2021 01:33:29
+291,63,Karur,Moderate,73,7,4,Tamil Nadu,27,27-05-2021 01:33:29
+292,56,Kilkunda,Moderate,89,25,9,Tamil Nadu,20,27-05-2021 01:33:29
+293,45,Kodaikanal,Good,78,13,7,Tamil Nadu,14,27-05-2021 01:33:29
+294,34,Madurai,Good,70,24,21,Tamil Nadu,27,27-05-2021 01:33:29
+295,40,Nagercoil,Good,87,29,7,Tamil Nadu,24,27-05-2021 01:33:29
+296,49,Negapatam,Good,69,29,13,Tamil Nadu,29,27-05-2021 01:33:29
+297,44,Ootacamund,Good,83,26,9,Tamil Nadu,18,27-05-2021 01:33:29
+298,30,Rajapalaiyam,Good,72,30,11,Tamil Nadu,27,27-05-2021 01:33:29
+299,43,Rameswaram,Good,77,14,5,Tamil Nadu,29,27-05-2021 01:33:29
+300,43,Salem,Good,85,34,16,Tamil Nadu,25,27-05-2021 01:33:29
+301,50,Seven Pagodas,Good,59,65,28,Tamil Nadu,30,27-05-2021 01:33:29
+302,55,Tanjore,Moderate,63,22,10,Tamil Nadu,29,27-05-2021 01:33:29
+303,55,Tinnevelly,Moderate,80,48,21,Tamil Nadu,26,27-05-2021 01:33:29
+304,54,Tiruppur,Moderate,86,44,19,Tamil Nadu,25,27-05-2021 01:33:29
+305,42,Tiruvannamalai,Good,61,48,20,Tamil Nadu,29,27-05-2021 01:33:29
+306,60,Trichinopoly,Moderate,65,42,18,Tamil Nadu,28,27-05-2021 01:33:29
+307,30,Tuticorin,Good,79,21,7,Tamil Nadu,26,27-05-2021 01:33:29
+308,41,Valparai,Good,92,16,9,Tamil Nadu,19,27-05-2021 01:33:29
+309,48,Vellore,Good,60,58,22,Tamil Nadu,28,27-05-2021 01:33:29
+310,168,Adilabad,Poor,39,139,50,Telangana,33,27-05-2021 01:33:29
+311,81,Armur,Moderate,38,52,23,Telangana,32,27-05-2021 01:33:29
+312,128,Belampalli,Poor,35,38,25,Telangana,33,27-05-2021 01:33:29
+313,93,Bhainsa,Moderate,36,45,20,Telangana,33,27-05-2021 01:33:29
+314,91,Bodhan,Moderate,38,59,23,Telangana,32,27-05-2021 01:33:29
+315,104,Bodupal,Poor,36,75,29,Telangana,31,27-05-2021 01:33:29
+316,85,Devarkonda,Moderate,46,68,30,Telangana,32,27-05-2021 01:33:29
+317,102,Dubbak,Poor,33,67,24,Telangana,31,27-05-2021 01:33:29
+318,95,Gadwal,Moderate,49,67,21,Telangana,29,27-05-2021 01:33:29
+319,78,Hyderabad,Moderate,46,64,30,Telangana,30,27-05-2021 01:33:29
+320,101,Jaggayyapeta,Poor,43,51,24,Telangana,34,27-05-2021 01:33:29
+321,97,Jagtial,Moderate,35,45,24,Telangana,32,27-05-2021 01:33:29
+322,93,Jangaon,Moderate,33,68,28,Telangana,33,27-05-2021 01:33:29
+323,101,Kamareddipet,Poor,35,66,23,Telangana,31,27-05-2021 01:33:29
+324,114,Karimnagar,Poor,33,110,62,Telangana,33,27-05-2021 01:33:29
+325,84,Khammam,Moderate,38,42,26,Telangana,33,27-05-2021 01:33:29
+326,75,Koratla,Moderate,38,47,24,Telangana,33,27-05-2021 01:33:29
+327,161,Kothapet,Poor,35,74,29,Telangana,34,27-05-2021 01:33:29
+328,116,Kottagudem,Poor,35,35,24,Telangana,33,27-05-2021 01:33:29
+329,117,Mahbubnagar,Poor,52,134,48,Telangana,28,27-05-2021 01:33:29
+330,114,Mancheral,Poor,37,40,26,Telangana,33,27-05-2021 01:33:29
+331,123,Mandamari,Poor,37,39,25,Telangana,33,27-05-2021 01:33:29
+332,135,Mangur,Poor,39,33,22,Telangana,34,27-05-2021 01:33:29
+333,73,Metpalli,Moderate,38,49,24,Telangana,32,27-05-2021 01:33:29
+334,107,Nalgonda,Poor,41,110,46,Telangana,32,27-05-2021 01:33:29
+335,92,Niala Kondapalle,Moderate,39,51,30,Telangana,34,27-05-2021 01:33:29
+336,84,Nizamabad,Moderate,38,58,23,Telangana,33,27-05-2021 01:33:29
+337,120,Palwancha,Poor,33,35,23,Telangana,34,27-05-2021 01:33:29
+338,104,Ramgundam,Poor,37,40,26,Telangana,33,27-05-2021 01:33:29
+339,74,Secunderabad,Moderate,44,68,28,Telangana,29,27-05-2021 01:33:29
+340,88,Sirsilla,Moderate,31,60,24,Telangana,33,27-05-2021 01:33:29
+341,73,Suriapet,Moderate,37,58,29,Telangana,34,27-05-2021 01:33:29
+342,104,Vikarabad,Poor,49,76,23,Telangana,28,27-05-2021 01:33:29
+343,84,Wanparti,Moderate,52,221,23,Telangana,29,27-05-2021 01:33:29
+344,92,Warangal,Moderate,31,84,34,Telangana,33,27-05-2021 01:33:29
+345,111,Yellandu,Poor,35,36,24,Telangana,33,27-05-2021 01:33:29
+346,50,Agartala,Good,80,27,22,Tripura,28,27-05-2021 01:33:29
+347,136,Agra,Poor,39,85,84,Uttar Pradesh,29,27-05-2021 01:33:29
+348,167,Aligarh,Poor,37,284,100,Uttar Pradesh,29,27-05-2021 01:33:29
+349,92,Allahabad,Moderate,74,78,38,Uttar Pradesh,27,27-05-2021 01:33:29
+350,70,Bahraich,Moderate,94,81,39,Uttar Pradesh,29,27-05-2021 01:33:29
+351,105,Barehra,Poor,36,141,86,Uttar Pradesh,28,27-05-2021 01:33:29
+352,206,Bareilly,Unhealthy,84,179,104,Uttar Pradesh,26,27-05-2021 01:33:29
+353,114,Budaun,Poor,45,124,81,Uttar Pradesh,27,27-05-2021 01:33:29
+354,204,Bulandshahr,Unhealthy,43,290,92,Uttar Pradesh,31,27-05-2021 01:33:29
+355,120,Etawah,Poor,49,166,72,Uttar Pradesh,29,27-05-2021 01:33:29
+356,63,Faizabad,Moderate,77,67,33,Uttar Pradesh,27,27-05-2021 01:33:29
+357,82,Fatehpur,Moderate,71,88,39,Uttar Pradesh,28,27-05-2021 01:33:29
+358,115,Fatehpur Sikri,Poor,36,137,91,Uttar Pradesh,30,27-05-2021 01:33:29
+359,109,Firozabad,Poor,34,133,81,Uttar Pradesh,30,27-05-2021 01:33:29
+360,268,Ghaziabad,Unhealthy,44,279,110,Uttar Pradesh,30,27-05-2021 01:33:29
+361,65,Gorakhpur,Moderate,100,46,28,Uttar Pradesh,27,27-05-2021 01:33:29
+362,87,Hapur,Moderate,48,88,33,Uttar Pradesh,26,27-05-2021 01:33:29
+363,149,Hathras,Poor,35,204,95,Uttar Pradesh,29,27-05-2021 01:33:29
+364,63,Jaunpur,Moderate,79,60,16,Uttar Pradesh,26,27-05-2021 01:33:29
+365,113,Jhansi,Poor,47,109,44,Uttar Pradesh,29,27-05-2021 01:33:29
+366,133,Kairana,Poor,45,187,60,Uttar Pradesh,28,27-05-2021 01:33:29
+367,99,Kanpur,Moderate,67,70,45,Uttar Pradesh,34,27-05-2021 01:33:29
+368,92,Lucknow,Moderate,72,87,47,Uttar Pradesh,31,27-05-2021 01:33:29
+369,120,Mathura,Poor,37,167,82,Uttar Pradesh,31,27-05-2021 01:33:29
+370,191,Meerut,Poor,52,217,93,Uttar Pradesh,28,27-05-2021 01:33:29
+371,50,Mirzapur,Good,76,48,11,Uttar Pradesh,29,27-05-2021 01:33:29
+372,198,Moradabad,Poor,61,180,92,Uttar Pradesh,26,27-05-2021 01:33:29
+373,162,Muzaffarnagar,Poor,45,240,90,Uttar Pradesh,29,27-05-2021 01:33:29
+374,76,Noida,Moderate,38,56,46,Uttar Pradesh,33,27-05-2021 01:33:29
+375,125,Pilibhit,Poor,69,89,62,Uttar Pradesh,26,27-05-2021 01:33:29
+376,131,Rampur,Poor,66,169,66,Uttar Pradesh,26,27-05-2021 01:33:29
+377,111,Saharanpur,Poor,41,136,57,Uttar Pradesh,30,27-05-2021 01:33:29
+378,131,Sambhal,Poor,56,182,66,Uttar Pradesh,27,27-05-2021 01:33:29
+379,98,Shahjanpur,Moderate,59,122,75,Uttar Pradesh,27,27-05-2021 01:33:29
+380,82,Sitalpur,Moderate,70,95,44,Uttar Pradesh,27,27-05-2021 01:33:29
+381,46,Varanasi,Good,88,38,8,Uttar Pradesh,28,27-05-2021 01:33:29
+382,113,Vrindavan,Poor,35,187,80,Uttar Pradesh,30,27-05-2021 01:33:29
+383,119,Dehra Dun,Poor,44,147,60,Uttarakhand,24,27-05-2021 01:33:29
+384,164,Lansdowne,Poor,56,32,22,Uttarakhand,19,27-05-2021 01:33:29
+385,136,Nainital,Poor,76,58,37,Uttarakhand,16,27-05-2021 01:33:29
+386,41,Alipur Duar,Good,81,29,17,West Bengal,27,27-05-2021 01:33:29
+387,42,Asansol,Good,95,36,20,West Bengal,25,27-05-2021 01:33:29
+388,73,Baharampur,Moderate,86,51,35,West Bengal,26,27-05-2021 01:33:29
+389,49,Baidyabati,Good,92,27,11,West Bengal,27,27-05-2021 01:33:29
+390,40,Bali,Good,93,31,12,West Bengal,27,27-05-2021 01:33:29
+391,85,Balurghat,Moderate,82,34,22,West Bengal,26,27-05-2021 01:33:29
+392,56,Bangaon,Moderate,88,35,22,West Bengal,27,27-05-2021 01:33:29
+393,45,Bankura,Good,100,41,23,West Bengal,26,27-05-2021 01:33:29
+394,49,Bansbaria,Good,90,44,23,West Bengal,27,27-05-2021 01:33:29
+395,46,Barasat,Good,94,43,23,West Bengal,27,27-05-2021 01:33:29
+396,57,Barddhaman,Moderate,92,39,22,West Bengal,26,27-05-2021 01:33:29
+397,47,Basirhat,Good,91,38,25,West Bengal,28,27-05-2021 01:33:29
+398,49,Bhadreswar,Good,92,28,13,West Bengal,27,27-05-2021 01:33:29
+399,48,Bhatpara,Good,92,29,17,West Bengal,27,27-05-2021 01:33:29
+400,54,Champdani,Moderate,92,66,29,West Bengal,27,27-05-2021 01:33:29
+401,49,Chandannagar,Good,92,29,16,West Bengal,27,27-05-2021 01:33:29
+402,47,Dam Dam,Good,96,46,19,West Bengal,27,27-05-2021 01:33:29
+403,45,Darjeeling,Good,94,33,19,West Bengal,14,27-05-2021 01:33:29
+404,44,Durgapur,Good,94,46,26,West Bengal,25,27-05-2021 01:33:29
+405,49,Habra,Good,90,41,25,West Bengal,27,27-05-2021 01:33:29
+406,52,Haldia,Moderate,92,21,18,West Bengal,26,27-05-2021 01:33:29
+407,51,Halisahar,Moderate,90,60,31,West Bengal,27,27-05-2021 01:33:29
+408,46,Howrah,Good,93,55,25,West Bengal,27,27-05-2021 01:33:29
+409,49,Hugli,Good,92,30,16,West Bengal,27,27-05-2021 01:33:29
+410,96,Ingraj Bazar,Moderate,90,30,20,West Bengal,27,27-05-2021 01:33:29
+411,45,Jalpaiguri,Good,87,35,20,West Bengal,25,27-05-2021 01:33:29
+412,45,Jamuria,Good,92,38,20,West Bengal,25,27-05-2021 01:33:29
+413,50,Jaynagar-Majilpur,Good,94,43,22,West Bengal,27,27-05-2021 01:33:29
+414,49,Kalyani,Good,90,31,18,West Bengal,27,27-05-2021 01:33:29
+415,43,Kamarhati,Good,92,19,9,West Bengal,27,27-05-2021 01:33:29
+416,70,Kanchrapara,Moderate,90,79,31,West Bengal,27,27-05-2021 01:33:29
+417,59,Kharagpur,Moderate,86,41,24,West Bengal,26,27-05-2021 01:33:29
+418,45,Khardah,Good,92,23,12,West Bengal,27,27-05-2021 01:33:29
+419,43,Kolkata,Good,95,41,21,West Bengal,27,27-05-2021 01:33:29
+420,57,Krishnanagar,Moderate,89,35,22,West Bengal,27,27-05-2021 01:33:29
+421,44,Kulti,Good,90,33,19,West Bengal,25,27-05-2021 01:33:29
+422,49,Madhyamgram,Good,90,64,29,West Bengal,27,27-05-2021 01:33:29
+423,87,Mahadipur,Moderate,90,28,18,West Bengal,27,27-05-2021 01:33:29
+424,61,Medinipur,Moderate,86,41,24,West Bengal,26,27-05-2021 01:33:29
+425,48,Naihati,Good,92,30,17,West Bengal,27,27-05-2021 01:33:29
+426,59,Navadwip,Moderate,89,36,21,West Bengal,27,27-05-2021 01:33:29
+427,43,Panihati,Good,92,20,10,West Bengal,27,27-05-2021 01:33:29
+428,56,Raiganj,Moderate,83,36,22,West Bengal,26,27-05-2021 01:33:29
+429,91,Rajmahal,Moderate,90,34,22,West Bengal,26,27-05-2021 01:33:29
+430,46,Rishra,Good,92,22,9,West Bengal,27,27-05-2021 01:33:29
+431,52,Shantipur,Moderate,89,34,21,West Bengal,27,27-05-2021 01:33:29
+432,41,Shiliguri,Good,79,34,16,West Bengal,26,27-05-2021 01:33:29
+433,56,Shrirampur,Moderate,92,62,22,West Bengal,27,27-05-2021 01:33:29
+434,66,Titagarh,Moderate,92,72,33,West Bengal,27,27-05-2021 01:33:29
+435,49,Uluberiya,Good,90,40,22,West Bengal,27,27-05-2021 01:33:29
