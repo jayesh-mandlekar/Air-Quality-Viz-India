@@ -1,3 +1,14 @@
+* {
+	margin: 5;
+	padding: 8;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: "Open Sans", sans-serif;
+}
+
+
 .graph-callback-flex {
     display: flex;
     flex-direction: column;
@@ -30,3 +41,125 @@
     padding: 8px 0px;
 }
 
+.buttons-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.links {
+  background-color: #B3C100;
+  border: none;
+  color: #202020;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+header {
+	position: absolute;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 35px 100px 0;
+	animation: 1s fadein 0.5s forwards;
+	opacity: 0;
+	color: #fff;
+	z-index: 2;
+}
+
+@keyframes fadein {
+	100% {
+		opacity: 1;
+	}
+}
+
+header h2 {
+	font-family: "Open Sans", sans-serif;
+}
+
+header nav {
+	display: flex;
+	margin-right: -15px;
+}
+
+header nav li {
+	margin: 0 15px;
+}
+
+nav {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	opacity: 0.8;
+	color: #fff;
+	font-weight: bold;
+	transition: all 400ms;
+}
+
+a:hover {
+	opacity: 1;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 100px 80px;
+}
+
+.hero {
+	position: relative;
+	justify-content: center;
+	text-align: center;
+	min-height: 100vh;
+	color: #fff;
+}
+
+.hero .background-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("https://images.unsplash.com/photo-1502239608882-93b729c6af43?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+	background-size: cover;
+	z-index: -1;
+	background-color: #80a3db;
+}
+
+.hero h1 {
+	font: 72px "Open Sans", sans-serif;
+	text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+	margin-bottom: 15px;
+}
+
+
+.hero a.btn {
+	padding: 20px 46px;
+} */
+
+.hero-content-area {
+	opacity: 0;
+	margin-top: 100px;
+	animation: 1s slidefade 1s forwards;
+}
+
+@keyframes slidefade {
+	100% {
+		opacity: 1;
+		margin: 0;
+	}
+}
+
+.front-page-links {
+	padding-top: 15px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
