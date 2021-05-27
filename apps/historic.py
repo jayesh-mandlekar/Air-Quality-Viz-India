@@ -51,7 +51,7 @@ air_quality_df['Area Category'] = air_quality_df['Area Category'].replace(
 
 Constant_Pollutants = ['Sulphur_Dioxide', 'Nitrogen_Dioxide',
                        'Respirable_Suspended_Particulate_Matter']
-start_date_year = '1990'
+start_date_year = '2015'
 start_date_month = '01'
 start_date_day = '01'
 end_date_year = '2015'
@@ -91,12 +91,10 @@ layout = html.Div(style={'backgroundColor': colors['background'], 'color': color
                               html.Div(className='padding-utility', children=[
                                   html.Label('Calendar'),
                                   dcc.DatePickerRange(id='Time-Slots',
-                                                      start_date=datetime.date(1990, 1, 1),
+                                                      start_date=datetime.date(2015, 1, 1),
                                                       end_date=datetime.date(2015,12,31),
                                                       min_date_allowed=datetime.date(1990, 1, 1),
                                                       max_date_allowed=datetime.date(2015,12,31),
-                                                      start_date_placeholder_text="01/01/1990",
-                                                      end_date_placeholder_text="12/31/2015",
                                                       )
                               ]),
                               html.Div(className='padding-utility', children=[

@@ -10,6 +10,7 @@ import plotly.graph_objects as go
 from dash.dependencies import Input, Output
 import plotly.express as px
 import pandas as pd
+import numpy as np
 
 from app import app
 
@@ -127,8 +128,42 @@ def update_figure(state, city):
 
 @app.callback(
     Output('state-city-bar', 'figure'),
-    [Input('state-dropdown', 'state'),
-     Input('city-dropdown-2', 'city')]
+    [Input('state-dropdown', 'value'),
+     Input('city-dropdown-2', 'value')]
 )
-def update_figure(selected_state, selected_city):
-    return
+def update_figure(state, city):
+    features = ['City','AQI']
+    required_df = current_df[(current_df['State'] == state)][features].sort_values(by='AQI',ascending=True).reset_index()
+    x = required_df['AQI'].tolist()
+    y = required_df['City'].tolist()
+    color=np.array(['rgb(255,255,255)']*len(y))
+    pos = required_df.loc[required_df['City'] == city].index
+    color[pos] ='rgb(0,0,0)'
+    fig_2 = go.Figure(go.Bar(
+                x=x,
+                y=y,
+                marker=dict(color=color.tolist()),
+                orientation ='h'
+    ))
+
+    fig_2.update_layout(autosize=False,
+    width=1200,
+    height=700,
+    plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text']
+    )
+
+    fig_2.update_xaxes(
+        title_text="AQI of cities in " + state,
+        showgrid=True,
+        title_font={"size": 20},
+    )
+
+    fig_2.update_yaxes(
+        title_text="Cities in "+state,
+        title_font={"size": 20},
+        showgrid=False,
+    )
+
+    return fig_2
